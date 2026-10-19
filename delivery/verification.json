@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-10-18T13:54:18.924170+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "checks": {
+    "tests": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "log": "delivery/checks/tests.txt"
+    },
+    "lint": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "log": "delivery/checks/lint.txt"
+    },
+    "format": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "log": "delivery/checks/format.txt"
+    },
+    "compile": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "datarescue",
+        "scripts",
+        "tests"
+      ],
+      "log": "delivery/checks/compile.txt"
+    },
+    "wheel": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "build",
+        "--wheel"
+      ],
+      "log": "delivery/checks/wheel.txt"
+    },
+    "install": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--target",
+        "/tmp/datarescue-install-kl6p2g_5/package",
+        "/workspace/scratch/1e12a4453378/datarescue/dist/datarescue_workbench-0.1.0-py3-none-any.whl"
+      ],
+      "log": "delivery/checks/install.txt"
+    },
+    "installed-profile": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "datarescue",
+        "profile",
+        "--input",
+        "/workspace/scratch/1e12a4453378/datarescue/fixtures/orders.csv"
+      ],
+      "log": "delivery/checks/installed-profile.txt"
+    },
+    "installed-e2e": {
+      "exit_code": 0,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1e12a4453378/datarescue/scripts/offline_demo.py",
+        "--out",
+        "/tmp/datarescue-install-kl6p2g_5/demo"
+      ],
+      "log": "delivery/checks/installed-e2e.txt"
+    }
+  },
+  "all_passed": true,
+  "wheel_sha256": "68d003470c468df06847c6da0f6f49c094b868b89e73f69cbfb20642be82b900",
+  "tests_expected": 36,
+  "live_model_evidence": "delivery/live-model-attempt-2/smoke/verification.json",
+  "remote_ci_run": false,
+  "browser_execution_verified": false,
+  "browser_blocker": "Playwright Chromium download returned invalid/truncated archives"
+}

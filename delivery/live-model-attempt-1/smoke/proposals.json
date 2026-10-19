@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "kind": "proposals",
+  "source_sha256": "a39aaa2e820bbfea76c27eb49e59038c83ad32658c9a4203c80170c73810e55f",
+  "headers": [
+    "id",
+    "status"
+  ],
+  "profile": {
+    "rows": 5,
+    "columns": {
+      "id": {
+        "missing": 0,
+        "distinct": 5,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0,
+        "value_counts": [
+          {
+            "value": "001",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "002",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "003",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "004",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "005",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0,
+        "value_counts": [
+          {
+            "value": "pending",
+            "count": 2,
+            "truncated": false
+          },
+          {
+            "value": "pendng",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "Pending",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "done",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "column_count": 2,
+    "duplicate_rows": 0,
+    "formula_risk_cells": 0,
+    "formula_risk_headers": 0,
+    "suspicious_records": [],
+    "suspicious_count": 0,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  },
+  "shared_columns": [
+    "status"
+  ],
+  "mode": "live_model",
+  "proposals": [
+    {
+      "id": "p1",
+      "operation": {
+        "kind": "trim",
+        "column": "id"
+      },
+      "reason": "Remove leading/trailing whitespace from 'id' column to standardize formatting.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p2",
+      "operation": {
+        "kind": "trim",
+        "column": "status"
+      },
+      "reason": "Standardize whitespace in 'status' column for consistent parsing.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p3",
+      "operation": {
+        "kind": "replace_exact",
+        "column": "status",
+        "mapping": {
+          "pending": "pending",
+          "pendng": "pending",
+          "Pending": "pending",
+          "done": "done"
+        }
+      },
+      "reason": "Resolve case variations in 'status' column using observed shared values.",
+      "risk": "meaning_change_possible"
+    }
+  ],
+  "rejected": [
+    {
+      "index": 3,
+      "reason": "Missing or unsupported operation parameters",
+      "proposal": {
+        "operation": {
+          "kind": "drop_exact_duplicates",
+          "column": "id"
+        },
+        "reason": "Remove duplicate 'id' entries to ensure uniqueness."
+      }
+    }
+  ],
+  "errors": [],
+  "model": {
+    "calls": 1,
+    "usage": {
+      "prompt_tokens": 697,
+      "completion_tokens": 224,
+      "total_tokens": 921
+    }
+  },
+  "digest": "06640523d07a1d071df883029f5ecbb2487381be87df03f9b68b3c3e45c871e3"
+}

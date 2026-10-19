@@ -1,0 +1,59 @@
+"""Offline review workbench. Untrusted strings only enter textContent or JSON data."""
+
+import json
+
+STYLE = """body{font:16px system-ui;max-width:1080px;margin:40px auto;padding:0 24px;background:#f4f7fa;color:#182a3a}
+h1{font-size:32px}article,section{background:white;padding:22px;margin:18px 0;border:1px solid #ccd5df;border-radius:10px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}textarea{display:block;width:95%;height:110px;margin:12px 0}
+button,select,input{font:inherit;padding:8px;margin:8px 8px 8px 0}button{background:#124b65;color:white;border:0;border-radius:5px}
+.warning{border-left:5px solid #b77718;padding:14px;background:#fff4db}label{display:block}summary{cursor:pointer;font-weight:600}"""
+
+SCRIPT = """const data=JSON.parse(document.getElementById('data').textContent);
+const app=document.getElementById('app');
+function node(tag,text,parent=app){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;parent.appendChild(n);return n;}
+function json(value,parent=app){node('pre',JSON.stringify(value,null,2),parent);}
+function download(name,value){const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));const a=node('a');a.href=u;a.download=name;a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+node('h1',data.kind==='proposals'?'Review cleaning proposals':'Inspect exact cleaning preview');
+node('p','Input SHA-256: '+data.source_sha256);
+node('p','This file stays local. Suggestions are unapproved. Hashes detect stale artifacts, not reviewer identity.');
+const label=node('label','Reviewer name or local alias');const reviewer=node('input',undefined,label);reviewer.value='local reviewer';reviewer.maxLength=100;
+const choices=[];
+if(data.kind==='proposals'){
+ node('p','Reject is the default. Modify edits operation JSON only; the CLI validates it again. Operations run in listed order.');
+ for(const p of data.proposals){const card=node('article');node('h2',p.id+' · '+p.operation.kind,card);node('p',p.reason,card);node('p','Risk: '+p.risk,card);
+ const select=node('select',undefined,card);for(const v of ['reject','accept','modify']){const o=node('option',v,select);o.value=v;}
+ const edit=node('textarea',undefined,card);edit.value=JSON.stringify(p.operation,null,2);edit.disabled=true;select.onchange=()=>{edit.disabled=select.value!=='modify';};choices.push({p,select,edit});}
+ const button=node('button','Download decisions for preview');button.onclick=()=>{try{if(!reviewer.value.trim())throw Error('Reviewer required');
+ const decisions=choices.map(({p,select,edit})=>{const d={id:p.id,decision:select.value};if(select.value==='modify')d.operation=JSON.parse(edit.value);return d;});
+ download('review.json',{proposal_digest:data.digest,reviewer:reviewer.value,decisions});}catch(e){alert(e.message);}};
+}else{
+ node('p','All affected cells and removed original record IDs are listed below. Invalid dates remain unchanged. Review semantic correctness, not just fewer warnings.');
+ for(let i=0;i<data.steps.length;i++){const card=node('article');node('h2','Step '+(i+1)+' · '+data.operations[i].kind,card);json(data.operations[i],card);json(data.steps[i],card);}
+ const c=node('label','I reviewed these exact changes and approve this preview.');const box=node('input',undefined,c);box.type='checkbox';
+ const button=node('button','Download explicit approval');button.onclick=()=>{if(!box.checked||!reviewer.value.trim()){alert('Review, check approval, and enter your alias.');return;}
+ download('approval.json',{preview_digest:data.digest,approve:true,reviewer:reviewer.value});};
+}
+const details=node('details');node('summary','Full audit / diagnostics / rejected suggestions',details);json(data,details);
+"""
+
+
+def render(record):
+    data = (
+        json.dumps(record, ensure_ascii=True)
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+        .replace("&", "\\u0026")
+    )
+    return (
+        '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
+        "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; script-src 'unsafe-inline'; "
+        "style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\">"
+        "<title>DataRescue · Local review</title><style>" + STYLE + '</style><main id="app">'
+        '<p class="warning">Local cleaning review · No data changes until explicit CLI apply. '
+        "Open cleaned.csv in a text editor; spreadsheet formula risk is documented.</p></main>"
+        '<script id="data" type="application/json">'
+        + data
+        + "</script><script>"
+        + SCRIPT
+        + "</script></html>"
+    )

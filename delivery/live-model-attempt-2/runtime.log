@@ -1,0 +1,21 @@
+0.00.010.834 I srv  llama_server: initializing ...
+0.00.010.860 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.011.212 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.012.701 I srv    load_model: loading model '/workspace/scratch/1e12a4453378/datarescue-model/model.gguf'
+0.00.380.242 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.706.039 I cmn          init: llama threadpool init, n_threads = 4
+0.00.882.980 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.00.888.807 I srv  llama_server: model loaded
+0.00.888.826 I srv  llama_server: listening on http://127.0.0.1:18081
+0.01.002.506 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.01.002.735 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.12.808.891 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =  17.06 t/s, tg_3s =  17.23 t/s
+0.15.844.283 I slot print_timing: id  0 | task 0 | n_gen =    160, tg =  17.99 t/s, tg_3s =  19.77 t/s
+0.18.872.417 I slot print_timing: id  0 | task 0 | n_gen =    219, tg =  18.37 t/s, tg_3s =  19.48 t/s
+0.19.153.535 I slot print_timing: id  0 | task 0 | prompt eval time =    6002.60 ms /   697 tokens (    8.61 ms per token,   116.12 tokens per second)
+0.19.153.546 I slot print_timing: id  0 | task 0 |        eval time =   12148.15 ms /   224 tokens (   54.48 ms per token,    18.36 tokens per second)
+0.19.153.547 I slot print_timing: id  0 | task 0 |       total time =   18150.75 ms /   921 tokens
+0.19.153.573 I slot print_timing: id  0 | task 0 |    graphs reused =        222
+0.19.153.574 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.19.153.653 I slot      release: id  0 | task 0 | stop processing: n_tokens = 920, truncated = 0
+0.19.223.040 I srv    operator(): operator(): cleaning up before exit...

@@ -1,0 +1,5 @@
+Replayed exact approved output: c04546cbaae131ea2d43de6349a7ef6960cca3305ca0da3c6d7e59d0171bbd7e
+plan: wrote /tmp/datarescue-install-kl6p2g_5/demo/plan
+preview: wrote /tmp/datarescue-install-kl6p2g_5/demo/preview
+apply: wrote /tmp/datarescue-install-kl6p2g_5/demo/export
+Offline fixture and byte-identical standalone replay passed; no model calls.

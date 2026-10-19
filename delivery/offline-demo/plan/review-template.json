@@ -1,0 +1,26 @@
+{
+  "proposal_digest": "66c98a78d40bc1a609e5545924fcbe151363f1fafea4288e7b14e6038ef4030b",
+  "reviewer": "local reviewer",
+  "decisions": [
+    {
+      "id": "p1",
+      "decision": "reject"
+    },
+    {
+      "id": "p2",
+      "decision": "reject"
+    },
+    {
+      "id": "p3",
+      "decision": "reject"
+    },
+    {
+      "id": "p4",
+      "decision": "reject"
+    },
+    {
+      "id": "p5",
+      "decision": "reject"
+    }
+  ]
+}

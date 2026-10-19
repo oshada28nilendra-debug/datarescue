@@ -1,0 +1,29 @@
+{
+  "result": "passed",
+  "fixture": "authored fictional categorical statuses",
+  "calls": 1,
+  "usage": {
+    "prompt_tokens": 697,
+    "completion_tokens": 224,
+    "total_tokens": 921
+  },
+  "selected_ids": [
+    "p3"
+  ],
+  "rejected_proposals": [
+    {
+      "index": 3,
+      "reason": "Missing or unsupported operation parameters",
+      "proposal": {
+        "operation": {
+          "kind": "drop_exact_duplicates",
+          "column": "id"
+        },
+        "reason": "Remove duplicate 'id' entries to ensure uniqueness."
+      }
+    }
+  ],
+  "preview_digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50",
+  "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+  "limitation": "One synthetic case, scripted test approval; not a general accuracy or human-usability claim."
+}

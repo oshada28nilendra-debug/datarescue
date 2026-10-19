@@ -1,0 +1,3 @@
+# Contributing
+
+Use Python 3.11+, run the README checks, and include a failing regression test before a behavioral fix. Keep transformations pure, bounded and string-preserving. No model-generated executable code, silent coercion, implicit approval, or paid integration in ordinary CI. Add schema validation, preview evidence and failure tests for each new operation. Document changed artifact schemas and privacy implications. Use fictional fixtures without personal data. Never commit API keys, actual user CSVs, local model weights, or reviewer evidence containing confidential cells. PRs must not be merged automatically.
