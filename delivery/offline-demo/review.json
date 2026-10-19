@@ -1,0 +1,26 @@
+{
+  "proposal_digest": "66c98a78d40bc1a609e5545924fcbe151363f1fafea4288e7b14e6038ef4030b",
+  "reviewer": "SCRIPTED authored fixture test",
+  "decisions": [
+    {
+      "id": "p1",
+      "decision": "accept"
+    },
+    {
+      "id": "p2",
+      "decision": "accept"
+    },
+    {
+      "id": "p3",
+      "decision": "accept"
+    },
+    {
+      "id": "p4",
+      "decision": "accept"
+    },
+    {
+      "id": "p5",
+      "decision": "accept"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+running egg_info
+writing datarescue_workbench.egg-info/PKG-INFO
+writing dependency_links to datarescue_workbench.egg-info/dependency_links.txt
+writing entry points to datarescue_workbench.egg-info/entry_points.txt
+writing top-level names to datarescue_workbench.egg-info/top_level.txt
+reading manifest file 'datarescue_workbench.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'datarescue_workbench.egg-info/SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+copying datarescue/dataset.py -> build/lib/datarescue
+running egg_info
+writing datarescue_workbench.egg-info/PKG-INFO
+writing dependency_links to datarescue_workbench.egg-info/dependency_links.txt
+writing entry points to datarescue_workbench.egg-info/entry_points.txt
+writing top-level names to datarescue_workbench.egg-info/top_level.txt
+reading manifest file 'datarescue_workbench.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'datarescue_workbench.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/datarescue
+copying build/lib/datarescue/workflow.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/dataset.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/httpio.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/engine.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/provider.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/__main__.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/export.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/cli.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/__init__.py -> build/bdist.linux-x86_64/wheel/./datarescue
+copying build/lib/datarescue/render.py -> build/bdist.linux-x86_64/wheel/./datarescue
+running install_egg_info
+Copying datarescue_workbench.egg-info to build/bdist.linux-x86_64/wheel/./datarescue_workbench-0.1.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/datarescue_workbench-0.1.0.dist-info/WHEEL
+creating '/workspace/scratch/1e12a4453378/datarescue/dist/.tmp-9ti_tgf8/datarescue_workbench-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'datarescue/__init__.py'
+adding 'datarescue/__main__.py'
+adding 'datarescue/cli.py'
+adding 'datarescue/dataset.py'
+adding 'datarescue/engine.py'
+adding 'datarescue/export.py'
+adding 'datarescue/httpio.py'
+adding 'datarescue/provider.py'
+adding 'datarescue/render.py'
+adding 'datarescue/workflow.py'
+adding 'datarescue_workbench-0.1.0.dist-info/licenses/LICENSE'
+adding 'datarescue_workbench-0.1.0.dist-info/METADATA'
+adding 'datarescue_workbench-0.1.0.dist-info/WHEEL'
+adding 'datarescue_workbench-0.1.0.dist-info/entry_points.txt'
+adding 'datarescue_workbench-0.1.0.dist-info/top_level.txt'
+adding 'datarescue_workbench-0.1.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built datarescue_workbench-0.1.0-py3-none-any.whl
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=68
+* Getting build dependencies for wheel...
+WARNING `project.license` as a TOML table is deprecated
+!!
+
+        ********************************************************************************
+        Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+
+        By 2027-Feb-18, you need to update your project and remove deprecated calls
+        or your builds will no longer be supported.
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+* Installed build dependency versions:
+  - setuptools==84.0.0
+* Building wheel...
+WARNING `project.license` as a TOML table is deprecated
+!!
+
+        ********************************************************************************
+        Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+
+        By 2027-Feb-18, you need to update your project and remove deprecated calls
+        or your builds will no longer be supported.
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!

@@ -1,0 +1,899 @@
+{
+  "timezone": "Asia/Colombo",
+  "updated_at": "2026-10-19T00:08:18.512Z",
+  "entries": [
+    {
+      "slot": "2026-10-18-morning",
+      "local_time": "09:00",
+      "project": "IssueForge",
+      "status": "verified_release_merged",
+      "completed": true,
+      "target_user": "Maintainers triaging small Python unittest repositories",
+      "problem": "Convert a bug report into reproducible, reviewable execution evidence",
+      "differentiator": "Reproduction-only artifact with source fingerprint, two fresh trials and optional fixed control",
+      "architecture": "Bounded single-agent read/search/propose loop; deterministic evidence policy; Docker-only execution",
+      "repository": "https://github.com/oshada28nilendra-debug/issueforge",
+      "branch": "main",
+      "verification": {
+        "timestamp": "2026-10-18T09:45:54.464867+05:30",
+        "python": "3.12.14",
+        "checks": {
+          "lint": {
+            "exit_code": 0,
+            "log": "delivery/current-lint.txt",
+            "command": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-m",
+              "ruff",
+              "check",
+              "."
+            ]
+          },
+          "format": {
+            "exit_code": 0,
+            "log": "delivery/current-format.txt",
+            "command": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-m",
+              "ruff",
+              "format",
+              "--check",
+              "."
+            ]
+          },
+          "compile": {
+            "exit_code": 0,
+            "log": "delivery/current-compile.txt",
+            "command": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-m",
+              "compileall",
+              "-q",
+              "issueforge"
+            ]
+          },
+          "unit_and_offline_tests": {
+            "exit_code": 0,
+            "log": "delivery/current-unit_and_offline_tests.txt",
+            "command": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-v"
+            ]
+          }
+        },
+        "tests_total": 55,
+        "tests_passed": 52,
+        "tests_skipped": 3,
+        "docker_execution_verified": true,
+        "live_model_verified": true,
+        "github_ci_run": true,
+        "wheel_build": "passed; pip wheel --no-deps --no-build-isolation .",
+        "installed_wheel_smoke": "passed; isolated /tmp import via target installation",
+        "actual_cli_run": "could_not_investigate; Docker CLI unavailable; exit 3",
+        "blockers": [],
+        "github_ci": {
+          "repository": "oshada28nilendra-debug/issueforge",
+          "pull_request": "https://github.com/oshada28nilendra-debug/issueforge/pull/1",
+          "tested_head_sha": "a6816212ff44bcdbe339b4e28c092626ec806bcf",
+          "run_url": "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39093841366",
+          "run_id": 39093841366,
+          "conclusion": "success",
+          "jobs": {
+            "unit (3.11)": "success",
+            "unit (3.12)": "success",
+            "unit (3.13)": "success",
+            "container-integration": "success"
+          },
+          "host_tests_per_python": {
+            "passed": 45,
+            "skipped": 3
+          },
+          "actual_docker_tests": {
+            "passed": 3,
+            "skipped": 0
+          },
+          "docker_test_cases": [
+            "unprivileged user, no outbound network and read-only source",
+            "fixed source does not reproduce",
+            "buggy source fails twice and fixed control passes"
+          ],
+          "container_image_digest": "sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1",
+          "live_model_verified": false,
+          "note": "CI results checked through job status and decoded Docker job logs. This record tests the implementation commit; the following commit updates delivery documentation only."
+        },
+        "live_model": {
+          "run_url": "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39096221948",
+          "tested_head_sha": "4f4a25db601ffa5ca0c4c7275ab8a79afc3f9381",
+          "artifact_url": "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39096221948/artifacts/12124293279",
+          "conclusion": "success",
+          "model_runtime": {
+            "version": "0.40.6"
+          },
+          "models": {
+            "models": [
+              {
+                "name": "qwen2.5-coder:7b-instruct-q4_K_M",
+                "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+                "modified_at": "2026-10-18T04:13:00.038013573Z",
+                "size": 4683087561,
+                "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "7.6B",
+                  "quantization_level": "Q4_K_M",
+                  "context_length": 32768,
+                  "embedding_length": 3584,
+                  "runner": "ggml"
+                },
+                "capabilities": [
+                  "completion",
+                  "tools",
+                  "insert"
+                ]
+              }
+            ]
+          },
+          "gate": {
+            "status": "passed",
+            "model_calls": 1,
+            "model_usage": {
+              "prompt_tokens": 678,
+              "completion_tokens": 124
+            },
+            "test_sha256": "f7cec406f1f2409c354076b088dbb09ca8ef57177c9378f91e68720c51f92484",
+            "limit": "Fixture smoke test only; human review must confirm relevance."
+          },
+          "baseline": "pass",
+          "trials": [
+            "assertion_failure",
+            "assertion_failure"
+          ],
+          "control": "pass",
+          "manual_relevance_review": "Generated unittest directly calls prices.total on the reported inputs and asserts Decimal(0.30); no mocks or unrelated assertions.",
+          "limits": "One authored fixture only; no real-issue benchmark, efficacy rate or production-readiness claim.",
+          "regular_ci_url": "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39096221975"
+        },
+        "scope": "52 host/offline tests; 3 actual Docker cases in separate CI; one real-model fixture smoke test.",
+        "initial_local_record": "delivery/verification.json"
+      },
+      "delivery_links": [
+        "README.md",
+        "docs/VALIDATION.md",
+        "docs/VERIFICATION.md",
+        "delivery/blocked-demo/report.json",
+        "https://github.com/oshada28nilendra-debug/issueforge/pull/1",
+        "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39093841366",
+        "delivery/github-ci.json",
+        "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39096221948",
+        "delivery/live-model-verification.json",
+        "delivery/live-model-report.json",
+        "delivery/live-model-generated-test.txt",
+        "delivery/live-model-history.json"
+      ],
+      "suggested_repository": "oshada28nilendra-debug/issueforge",
+      "suggested_branch": "feat/issueforge-first-release",
+      "source_package": "IssueForge-2026-10-18-source.zip",
+      "pull_request": "https://github.com/oshada28nilendra-debug/issueforge/pull/1",
+      "commit": "4f4a25db601ffa5ca0c4c7275ab8a79afc3f9381",
+      "merge_commit": "27f4e888010afaddff648031d08a8f9c89be83e8",
+      "security_followup": {
+        "pull_request": "https://github.com/oshada28nilendra-debug/issueforge/pull/2",
+        "merged": true,
+        "tested_commit": "6b0dc4243b429cf2c5fa7ab313359dab2f18de38",
+        "host_passed": 56,
+        "host_docker_skips": 3,
+        "docker_passed": 3,
+        "secret_scan": "passed",
+        "live_model_smoke": "passed",
+        "runs": [
+          "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39097368689",
+          "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39097368752",
+          "https://github.com/oshada28nilendra-debug/issueforge/actions/runs/39097368698"
+        ]
+      }
+    },
+    {
+      "slot": "2026-10-18-afternoon",
+      "local_time": "13:00",
+      "project": "EvidenceRoom",
+      "status": "verified_release_pr_open",
+      "completed": true,
+      "target_user": "Researchers, analysts and small organizations preparing decisions from competing documents",
+      "problem": "Audit which exact source passages support, oppose or only contextualize a claim before making a decision",
+      "differentiator": "Exact normalized spans and source hashes, rejected citation records, source diversity, opposing-evidence queue and digest-bound human review",
+      "architecture": "Local-first CLI; bounded BM25 retrieval; single optional model workflow; deterministic provenance gates; inert exports",
+      "repository": "https://github.com/oshada28nilendra-debug/evidenceroom",
+      "branch": "feat/evidenceroom-first-release",
+      "verification": {
+        "github_ci_run": true,
+        "live_model_verified": true,
+        "tests_passed": 39,
+        "tests_skipped": 0,
+        "python_versions": [
+          "3.11",
+          "3.12",
+          "3.13"
+        ],
+        "blockers": [],
+        "browser_execution_verified": false,
+        "public_integrations_verified": true,
+        "scope": "Bounded supported release verified; general efficacy and production readiness are not claimed",
+        "publication_record": "delivery/github-verification.json",
+        "published_verification": {
+          "repository": "https://github.com/oshada28nilendra-debug/evidenceroom",
+          "branch": "feat/evidenceroom-first-release",
+          "pull_request": "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
+          "tested_implementation_commit": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+          "status": "verified_release_pr_open",
+          "bounded_release_complete": true,
+          "merged": false,
+          "runs": [
+            {
+              "id": 39179015444,
+              "name": "live-model",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015444",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179015431,
+              "name": "Public source integrations",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015431",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179015402,
+              "name": "checks",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015402",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39178970550,
+              "name": "checks",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39178970550",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "push"
+            }
+          ],
+          "tests_per_python": 39,
+          "python_versions": [
+            "3.11",
+            "3.12",
+            "3.13"
+          ],
+          "skipped": 0,
+          "decoded_job_logs_inspected": true,
+          "live_model": {
+            "status": "passed",
+            "bundle_digest": "bf1d3b341583679a984a5ff4faf3d5fa4fdba79a2e8b462a51c1104cee05e852",
+            "model": {
+              "calls": 4,
+              "usage": {
+                "prompt_tokens": 2322,
+                "completion_tokens": 642
+              }
+            },
+            "limit": "One authored fixture; human review still required."
+          },
+          "live_artifact": {
+            "id": 12155776535,
+            "sha256": "a1b09672886bbe82a6814ca768379f66f457af4081eaff6667ebf5de2064cf56",
+            "downloaded_and_hash_checked": true,
+            "retained_in": "delivery/github-live-model"
+          },
+          "paid_model_api_calls": 0,
+          "publication_email": "Account email used with explicit user authorization on 19 October; no privacy guarantee for commit metadata",
+          "limitations": [
+            "Authored fixture integration checks only; no general efficacy, complete-security or production-readiness claim",
+            "User review/merge remains separate"
+          ],
+          "public_integrations": {
+            "timestamp": "2026-10-19T00:03:09.876758+00:00",
+            "checks": {
+              "public_source": {
+                "passed": true,
+                "url": "https://www.python.org/",
+                "mime": "text/html",
+                "bytes": 51765,
+                "sha256": "e69f72991bdef8a233817a23f162f2e63e86f869ac623e78788845edc09cc187"
+              },
+              "crossref": {
+                "passed": true,
+                "metadata": {
+                  "provider": "Crossref public metadata",
+                  "query": "retrieval augmented generation",
+                  "results": [
+                    {
+                      "title": "Retrieval‐Augmented Generation",
+                      "url": "https://doi.org/10.1002/9781394374717.ch03",
+                      "doi": "10.1002/9781394374717.ch03",
+                      "publisher": "Wiley",
+                      "type": "other"
+                    },
+                    {
+                      "title": "Graph‐based Retrieval‐augmented Generation",
+                      "url": "https://doi.org/10.1002/9781394374717.ch07",
+                      "doi": "10.1002/9781394374717.ch07",
+                      "publisher": "Wiley",
+                      "type": "other"
+                    },
+                    {
+                      "title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+                      "url": "https://doi.org/10.59350/q2pq3-0fv85",
+                      "doi": "10.59350/q2pq3-0fv85",
+                      "publisher": "Front Matter",
+                      "type": "posted-content"
+                    },
+                    {
+                      "title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+                      "url": "https://doi.org/10.59350/r9dj1-zkx52",
+                      "doi": "10.59350/r9dj1-zkx52",
+                      "publisher": "Front Matter",
+                      "type": "posted-content"
+                    },
+                    {
+                      "title": "Why Retrieval Augmented Generation?",
+                      "url": "https://doi.org/10.5040/bci-0kgd.ch-1",
+                      "doi": "10.5040/bci-0kgd.ch-1",
+                      "publisher": "Packt Publishing",
+                      "type": "other"
+                    }
+                  ],
+                  "notice": "Discovery candidates only; metadata is not evidence for a claim. Review and add primary source URLs to a case."
+                }
+              }
+            },
+            "passed": true,
+            "scope": "Actual public TLS source fetch and bibliographic discovery; no truth or research-quality claim"
+          },
+          "planning": "Experimental automatic planning remains limited; supplied reviewed factual claims are supported."
+        }
+      },
+      "delivery_links": [
+        "EvidenceRoom-2026-10-18-source.zip",
+        "README.md",
+        "docs/VERIFICATION.md",
+        "delivery/live-model-final/bundle.json",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015444",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015431",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015402",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39178970550",
+        "delivery/github-verification.json"
+      ],
+      "commit": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+      "pull_request": "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
+      "suggested_repository": "oshada28nilendra-debug/evidenceroom",
+      "suggested_branch": "feat/evidenceroom-first-release",
+      "source_package": "EvidenceRoom-2026-10-18-source.zip"
+    },
+    {
+      "slot": "2026-10-18-evening",
+      "local_time": "19:00",
+      "project": "DataRescue",
+      "status": "verified_release_pr_open",
+      "completed": true,
+      "target_user": "Analysts, research assistants and small teams cleaning recurring CSV exports",
+      "problem": "Correct messy categorical/date/duplicate data without silent coercion or unreviewed executable AI code",
+      "differentiator": "Finite deterministic recipes, exact input-bound preview approval, cell/record evidence and standalone byte-identical replay",
+      "architecture": "Stdlib Python CLI plus offline HTML review; pure transformations; genuine bounded compatible model adapter; strict proposal/review/preview/apply gates",
+      "repository": "https://github.com/oshada28nilendra-debug/datarescue",
+      "branch": "feat/datarescue-first-release",
+      "verification": {
+        "github_ci_run": true,
+        "live_model_verified": true,
+        "tests_passed": 36,
+        "tests_skipped": 0,
+        "python_versions": [
+          "3.11",
+          "3.12",
+          "3.13"
+        ],
+        "blockers": [],
+        "browser_execution_verified": true,
+        "public_integrations_verified": false,
+        "scope": "Bounded supported release verified; general efficacy and production readiness are not claimed",
+        "publication_record": "delivery/github-verification.json",
+        "published_verification": {
+          "repository": "https://github.com/oshada28nilendra-debug/datarescue",
+          "branch": "feat/datarescue-first-release",
+          "pull_request": "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+          "tested_implementation_commit": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+          "status": "verified_release_pr_open",
+          "bounded_release_complete": true,
+          "merged": false,
+          "runs": [
+            {
+              "id": 39179045344,
+              "name": "Manual pinned local model smoke",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179045342,
+              "name": "Tests and package",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179038181,
+              "name": "Tests and package",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179038181",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "push"
+            }
+          ],
+          "tests_per_python": 36,
+          "python_versions": [
+            "3.11",
+            "3.12",
+            "3.13"
+          ],
+          "skipped": 0,
+          "decoded_job_logs_inspected": true,
+          "live_model": {
+            "result": "passed",
+            "fixture": "authored fictional categorical statuses",
+            "calls": 1,
+            "usage": {
+              "prompt_tokens": 697,
+              "completion_tokens": 224,
+              "total_tokens": 921
+            },
+            "selected_ids": [
+              "p3"
+            ],
+            "rejected_proposals": [
+              {
+                "index": 3,
+                "reason": "Missing or unsupported operation parameters",
+                "proposal": {
+                  "operation": {
+                    "kind": "drop_exact_duplicates",
+                    "column": "id"
+                  },
+                  "reason": "Remove duplicate 'id' entries to ensure uniqueness."
+                }
+              }
+            ],
+            "preview_digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50",
+            "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+            "limitation": "One synthetic case, scripted test approval; not a general accuracy or human-usability claim."
+          },
+          "live_artifact": {
+            "id": 12155017901,
+            "sha256": "b87cf77fa09bfcac64c2d30b75113cb7fab294bd89cedc612172514f18c74af2",
+            "downloaded_and_hash_checked": true,
+            "retained_in": "delivery/github-live-model"
+          },
+          "paid_model_api_calls": 0,
+          "publication_email": "Account email used with explicit user authorization on 19 October; no privacy guarantee for commit metadata",
+          "limitations": [
+            "Authored fixture integration checks only; no general efficacy, complete-security or production-readiness claim",
+            "User review/merge remains separate"
+          ],
+          "browser": {
+            "result": "passed",
+            "browser": "149.0.7827.55",
+            "proposals": 5,
+            "checks": [
+              "default reject",
+              "accept/reject/modify decisions download",
+              "operation editor enablement",
+              "unchecked approval blocked",
+              "explicit digest-bound approval download",
+              "no browser page errors"
+            ],
+            "limitation": "Headless synthetic fixture check, not user research or accessibility certification"
+          },
+          "browser_artifact_id": 12155691794
+        }
+      },
+      "delivery_links": [
+        "DataRescue-2026-10-18-source.zip",
+        "README.md",
+        "docs/VALIDATION.md",
+        "docs/VERIFICATION.md",
+        "docs/HANDOFF.md",
+        "delivery/verification.json",
+        "delivery/live-model-attempt-2/smoke/verification.json",
+        "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179038181",
+        "delivery/github-verification.json"
+      ],
+      "commit": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+      "pull_request": "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+      "suggested_repository": "oshada28nilendra-debug/datarescue",
+      "suggested_branch": "feat/datarescue-first-release",
+      "source_package": "DataRescue-2026-10-18-source.zip"
+    },
+    {
+      "slot": "2026-10-19-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-19-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-19-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-20-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-20-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-20-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-21-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-21-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-21-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-22-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-22-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-22-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-23-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-23-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-23-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-24-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-24-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-24-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-25-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-25-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-25-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-26-morning",
+      "local_time": "09:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-26-afternoon",
+      "local_time": "13:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    },
+    {
+      "slot": "2026-10-26-evening",
+      "local_time": "19:00",
+      "project": null,
+      "status": "scheduled",
+      "completed": false,
+      "target_user": null,
+      "problem": null,
+      "differentiator": null,
+      "architecture": null,
+      "repository": null,
+      "branch": null,
+      "verification": null,
+      "delivery_links": []
+    }
+  ]
+}

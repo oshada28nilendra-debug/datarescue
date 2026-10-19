@@ -1,0 +1,102 @@
+{
+  "repository": "https://github.com/oshada28nilendra-debug/datarescue",
+  "branch": "feat/datarescue-first-release",
+  "pull_request": "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+  "tested_implementation_commit": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+  "status": "verified_release_pr_open",
+  "bounded_release_complete": true,
+  "merged": false,
+  "runs": [
+    {
+      "id": 39179045344,
+      "name": "Manual pinned local model smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344",
+      "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+      "event": "pull_request"
+    },
+    {
+      "id": 39179045342,
+      "name": "Tests and package",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342",
+      "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+      "event": "pull_request"
+    },
+    {
+      "id": 39179038181,
+      "name": "Tests and package",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179038181",
+      "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+      "event": "push"
+    }
+  ],
+  "tests_per_python": 36,
+  "python_versions": [
+    "3.11",
+    "3.12",
+    "3.13"
+  ],
+  "skipped": 0,
+  "decoded_job_logs_inspected": true,
+  "live_model": {
+    "result": "passed",
+    "fixture": "authored fictional categorical statuses",
+    "calls": 1,
+    "usage": {
+      "prompt_tokens": 697,
+      "completion_tokens": 224,
+      "total_tokens": 921
+    },
+    "selected_ids": [
+      "p3"
+    ],
+    "rejected_proposals": [
+      {
+        "index": 3,
+        "reason": "Missing or unsupported operation parameters",
+        "proposal": {
+          "operation": {
+            "kind": "drop_exact_duplicates",
+            "column": "id"
+          },
+          "reason": "Remove duplicate 'id' entries to ensure uniqueness."
+        }
+      }
+    ],
+    "preview_digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50",
+    "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+    "limitation": "One synthetic case, scripted test approval; not a general accuracy or human-usability claim."
+  },
+  "live_artifact": {
+    "id": 12155017901,
+    "sha256": "b87cf77fa09bfcac64c2d30b75113cb7fab294bd89cedc612172514f18c74af2",
+    "downloaded_and_hash_checked": true,
+    "retained_in": "delivery/github-live-model"
+  },
+  "paid_model_api_calls": 0,
+  "publication_email": "Account email used with explicit user authorization on 19 October; no privacy guarantee for commit metadata",
+  "limitations": [
+    "Authored fixture integration checks only; no general efficacy, complete-security or production-readiness claim",
+    "User review/merge remains separate"
+  ],
+  "browser": {
+    "result": "passed",
+    "browser": "149.0.7827.55",
+    "proposals": 5,
+    "checks": [
+      "default reject",
+      "accept/reject/modify decisions download",
+      "operation editor enablement",
+      "unchecked approval blocked",
+      "explicit digest-bound approval download",
+      "no browser page errors"
+    ],
+    "limitation": "Headless synthetic fixture check, not user research or accessibility certification"
+  },
+  "browser_artifact_id": 12155691794
+}

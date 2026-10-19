@@ -1,0 +1,74 @@
+{
+  "before": {
+    "rows": 5,
+    "columns": {
+      "id": {
+        "missing": 0,
+        "distinct": 5,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      }
+    },
+    "column_count": 2,
+    "duplicate_rows": 0,
+    "formula_risk_cells": 0,
+    "formula_risk_headers": 0,
+    "suspicious_records": [],
+    "suspicious_count": 0,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  },
+  "after": {
+    "rows": 5,
+    "columns": {
+      "id": {
+        "missing": 0,
+        "distinct": 5,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 2,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      }
+    },
+    "column_count": 2,
+    "duplicate_rows": 0,
+    "formula_risk_cells": 0,
+    "formula_risk_headers": 0,
+    "suspicious_records": [],
+    "suspicious_count": 0,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  }
+}

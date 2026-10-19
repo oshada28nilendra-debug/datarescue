@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "kind": "preview",
+  "proposal_digest": "06640523d07a1d071df883029f5ecbb2487381be87df03f9b68b3c3e45c871e3",
+  "review": {
+    "proposal_digest": "06640523d07a1d071df883029f5ecbb2487381be87df03f9b68b3c3e45c871e3",
+    "reviewer": "automated authored-fixture gate, not a person",
+    "decisions": [
+      {
+        "id": "p1",
+        "decision": "reject"
+      },
+      {
+        "id": "p2",
+        "decision": "reject"
+      },
+      {
+        "id": "p3",
+        "decision": "accept"
+      }
+    ]
+  },
+  "source_sha256": "a39aaa2e820bbfea76c27eb49e59038c83ad32658c9a4203c80170c73810e55f",
+  "headers": [
+    "id",
+    "status"
+  ],
+  "operations": [
+    {
+      "kind": "replace_exact",
+      "column": "status",
+      "mapping": {
+        "pending": "pending",
+        "pendng": "pending",
+        "Pending": "pending",
+        "done": "done"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "changed_cells": 2,
+      "removed_records": [],
+      "invalid_values": 0,
+      "changes": [
+        {
+          "record": 2,
+          "column": "status",
+          "before": "pendng",
+          "after": "pending"
+        },
+        {
+          "record": 3,
+          "column": "status",
+          "before": "Pending",
+          "after": "pending"
+        }
+      ],
+      "before_state": "f0d774e0a552b92317b49b8bd2d899daeda51b185cd37089f6445c47b0665a71",
+      "after_state": "9fb800ec4f36354512dec91a5137f413e883ff1e0cf7b110c23cbeff6c9adc57"
+    }
+  ],
+  "before": {
+    "rows": 5,
+    "columns": {
+      "id": {
+        "missing": 0,
+        "distinct": 5,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      }
+    },
+    "column_count": 2,
+    "duplicate_rows": 0,
+    "formula_risk_cells": 0,
+    "formula_risk_headers": 0,
+    "suspicious_records": [],
+    "suspicious_count": 0,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  },
+  "after": {
+    "rows": 5,
+    "columns": {
+      "id": {
+        "missing": 0,
+        "distinct": 5,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 2,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0
+      }
+    },
+    "column_count": 2,
+    "duplicate_rows": 0,
+    "formula_risk_cells": 0,
+    "formula_risk_headers": 0,
+    "suspicious_records": [],
+    "suspicious_count": 0,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  },
+  "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+  "output_records": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50"
+}

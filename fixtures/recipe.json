@@ -1,0 +1,9 @@
+{
+  "operations": [
+    {"kind": "trim", "column": "status"},
+    {"kind": "replace_exact", "column": "status", "mapping": {"pendng": "pending", "Pending": "pending"}},
+    {"kind": "blank_markers", "column": "note", "markers": ["N/A"]},
+    {"kind": "date_iso", "column": "shipped", "format": "%d/%m/%Y"},
+    {"kind": "drop_exact_duplicates"}
+  ]
+}

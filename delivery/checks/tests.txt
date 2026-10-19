@@ -1,0 +1,46 @@
+plan: wrote /tmp/tmp2jotated/plan
+preview: wrote /tmp/tmp2jotated/preview
+apply: wrote /tmp/tmp2jotated/export
+test_blank_markers_are_exact_not_universal_missing_inference (tests.test_core.CoreTests.test_blank_markers_are_exact_not_universal_missing_inference) ... ok
+test_case_transformation_is_explicit (tests.test_core.CoreTests.test_case_transformation_is_explicit) ... ok
+test_cell_budget (tests.test_core.CoreTests.test_cell_budget) ... ok
+test_duplicate_removal_keeps_first_and_original_record_ids (tests.test_core.CoreTests.test_duplicate_removal_keeps_first_and_original_record_ids) ... ok
+test_explicit_date_format_keeps_invalid_values_and_counts_them (tests.test_core.CoreTests.test_explicit_date_format_keeps_invalid_values_and_counts_them) ... ok
+test_explicit_mapping_does_not_guess_other_values (tests.test_core.CoreTests.test_explicit_mapping_does_not_guess_other_values) ... ok
+test_preserves_strings_leading_zero_ids_and_multiline_values (tests.test_core.CoreTests.test_preserves_strings_leading_zero_ids_and_multiline_values) ... ok
+test_profile_missing_duplicates_and_mixed_types (tests.test_core.CoreTests.test_profile_missing_duplicates_and_mixed_types) ... ok
+test_rejects_bad_headers_ragged_and_malformed_csv (tests.test_core.CoreTests.test_rejects_bad_headers_ragged_and_malformed_csv) ... ok
+test_rejects_binary_oversized_and_symlink_input (tests.test_core.CoreTests.test_rejects_binary_oversized_and_symlink_input) ... ok
+test_trim_does_not_mutate_input_and_reports_original_record (tests.test_core.CoreTests.test_trim_does_not_mutate_input_and_reports_original_record) ... ok
+test_unknown_code_and_malformed_params_fail_closed (tests.test_core.CoreTests.test_unknown_code_and_malformed_params_fail_closed) ... ok
+test_full_cli_approval_export_and_standalone_replay (tests.test_delivery.DeliveryTests.test_full_cli_approval_export_and_standalone_replay) ... Refused: invalid, stale or oversized input/configuration, unavailable model, or output path. No approval is implied; inspect the documented constraints.
+ok
+test_html_cannot_break_out_of_data_script (tests.test_delivery.DeliveryTests.test_html_cannot_break_out_of_data_script) ... ok
+test_invalid_input_no_partial_output (tests.test_delivery.DeliveryTests.test_invalid_input_no_partial_output) ... Refused: invalid, stale or oversized input/configuration, unavailable model, or output path. No approval is implied; inspect the documented constraints.
+ok
+test_actual_http_and_redirect_not_followed (tests.test_httpio.HTTPTests.test_actual_http_and_redirect_not_followed) ... ok
+test_actual_response_size_limit (tests.test_httpio.HTTPTests.test_actual_response_size_limit) ... ok
+test_slow_drip_has_absolute_io_deadline (tests.test_httpio.HTTPTests.test_slow_drip_has_absolute_io_deadline) ... ok
+test_json_fifo_is_rejected_without_blocking (tests.test_interfaces.BoundsTests.test_json_fifo_is_rejected_without_blocking) ... ok
+test_json_symlink_is_rejected (tests.test_interfaces.BoundsTests.test_json_symlink_is_rejected) ... ok
+test_profile_values_are_bounded_and_marked (tests.test_interfaces.BoundsTests.test_profile_values_are_bounded_and_marked) ... ok
+test_failure_paths_do_not_expose_response_bodies (tests.test_provider.ProviderTests.test_failure_paths_do_not_expose_response_bodies) ... ok
+test_real_wire_format_budget_usage (tests.test_provider.ProviderTests.test_real_wire_format_budget_usage) ... ok
+test_requires_remote_consent_and_tls (tests.test_provider.ProviderTests.test_requires_remote_consent_and_tls) ... ok
+test_approved_preview_recomputes_and_preserves_input (tests.test_workflow.WorkflowTests.test_approved_preview_recomputes_and_preserves_input) ... ok
+test_changed_source_or_decision_digest_is_rejected (tests.test_workflow.WorkflowTests.test_changed_source_or_decision_digest_is_rejected) ... ok
+test_default_reject_and_explicit_false_approval (tests.test_workflow.WorkflowTests.test_default_reject_and_explicit_false_approval) ... ok
+test_duplicate_ids_and_unknown_modification_parameters_fail (tests.test_workflow.WorkflowTests.test_duplicate_ids_and_unknown_modification_parameters_fail) ... ok
+test_duplicate_removal_after_trim_is_visible (tests.test_workflow.WorkflowTests.test_duplicate_removal_after_trim_is_visible) ... ok
+test_imported_recipe_is_new_unapproved_proposal_for_current_source (tests.test_workflow.WorkflowTests.test_imported_recipe_is_new_unapproved_proposal_for_current_source) ... ok
+test_model_envelope_and_failures_do_not_turn_into_offline_success (tests.test_workflow.WorkflowTests.test_model_envelope_and_failures_do_not_turn_into_offline_success) ... ok
+test_model_values_are_opt_in_and_only_chosen_columns_are_shared (tests.test_workflow.WorkflowTests.test_model_values_are_opt_in_and_only_chosen_columns_are_shared) ... ok
+test_offline_proposals_are_unapproved_and_source_bound (tests.test_workflow.WorkflowTests.test_offline_proposals_are_unapproved_and_source_bound) ... ok
+test_review_accept_reject_modify_and_sequential_preview (tests.test_workflow.WorkflowTests.test_review_accept_reject_modify_and_sequential_preview) ... ok
+test_tampered_preview_even_if_rehashed_is_rejected (tests.test_workflow.WorkflowTests.test_tampered_preview_even_if_rehashed_is_rejected) ... ok
+test_unsupported_model_code_rejected_but_valid_proposals_retained (tests.test_workflow.WorkflowTests.test_unsupported_model_code_rejected_but_valid_proposals_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.634s
+
+OK

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datarescue-workbench"
+version = "0.1.0"
+description = "Human-approved CSV cleaning with exact previews and standalone replay"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Oshada Nilendra"}]
+dependencies = []
+
+[project.scripts]
+datarescue = "datarescue.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["datarescue*"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E9", "F", "I"]

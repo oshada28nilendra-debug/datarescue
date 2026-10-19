@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "source_sha256": "c791cf8bed05b16696be764907831cfa7c437a292869deaef960d44e14834a45",
+  "operations": [
+    {
+      "kind": "trim",
+      "column": "status"
+    },
+    {
+      "kind": "replace_exact",
+      "column": "status",
+      "mapping": {
+        "pendng": "pending",
+        "Pending": "pending"
+      }
+    },
+    {
+      "kind": "blank_markers",
+      "column": "note",
+      "markers": [
+        "N/A"
+      ]
+    },
+    {
+      "kind": "date_iso",
+      "column": "shipped",
+      "format": "%d/%m/%Y"
+    },
+    {
+      "kind": "drop_exact_duplicates"
+    }
+  ],
+  "output_sha256": "c04546cbaae131ea2d43de6349a7ef6960cca3305ca0da3c6d7e59d0171bbd7e",
+  "preview_digest": "e7c49174501a188e0680268cb92df0007fc82bb2b62a85deadd5f5a88063b63f"
+}

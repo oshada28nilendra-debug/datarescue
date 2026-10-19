@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "source_sha256": "a39aaa2e820bbfea76c27eb49e59038c83ad32658c9a4203c80170c73810e55f",
+  "operations": [
+    {
+      "kind": "replace_exact",
+      "column": "status",
+      "mapping": {
+        "pending": "pending",
+        "pendng": "pending",
+        "Pending": "pending",
+        "done": "done"
+      }
+    }
+  ],
+  "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+  "preview_digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50"
+}

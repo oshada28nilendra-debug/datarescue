@@ -1,0 +1,32 @@
+{
+  "runtime_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11718/llama-b11718-bin-ubuntu-x64.tar.gz",
+  "runtime_sha256": "99f83b15cea9a4fb8945516c276b5f42b11608f82104fc6fa98a541cac826de7",
+  "model_url": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/90862c4b9d2787eaed51d12237eafdfe7c5f6077/Qwen3-1.7B-Q8_0.gguf",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "model": "Qwen3-1.7B Q8_0",
+  "runtime": "llama.cpp b11718",
+  "command": [
+    "/workspace/scratch/1e12a4453378/datarescue-model/llama-b11718/llama-server",
+    "-m",
+    "/workspace/scratch/1e12a4453378/datarescue-model/model.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18081",
+    "--alias",
+    "datarescue-qwen3",
+    "-t",
+    "4",
+    "-c",
+    "8192",
+    "-np",
+    "1",
+    "-ngl",
+    "0",
+    "--reasoning-budget",
+    "0"
+  ],
+  "runtime_executable_sha256": "83a4d763c03e453f13d2f702442bfdd99fb53a9cb2b14a244d4881f52e33cea1",
+  "paid_api_calls": 0,
+  "api_key_used": false
+}

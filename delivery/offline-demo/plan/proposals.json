@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "kind": "proposals",
+  "source_sha256": "c791cf8bed05b16696be764907831cfa7c437a292869deaef960d44e14834a45",
+  "headers": [
+    "order_id",
+    "status",
+    "shipped",
+    "note"
+  ],
+  "profile": {
+    "rows": 5,
+    "columns": {
+      "order_id": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "integer_like": 5
+        },
+        "inferred_type": "integer_like",
+        "whitespace": 0,
+        "leading_zero_values": 5,
+        "missing_markers": 0,
+        "ambiguous_dates": 0,
+        "value_counts": [
+          {
+            "value": "004",
+            "count": 2,
+            "truncated": false
+          },
+          {
+            "value": "001",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "002",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "003",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      },
+      "status": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 1,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 0,
+        "value_counts": [
+          {
+            "value": "done",
+            "count": 2,
+            "truncated": false
+          },
+          {
+            "value": " pending ",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "pendng",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "Pending",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      },
+      "shipped": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 0,
+        "ambiguous_dates": 1,
+        "value_counts": [
+          {
+            "value": "18/04/2026",
+            "count": 2,
+            "truncated": false
+          },
+          {
+            "value": "03/04/2026",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "17/04/2026",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "not-a-date",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      },
+      "note": {
+        "missing": 0,
+        "distinct": 4,
+        "type_counts": {
+          "text": 5
+        },
+        "inferred_type": "text",
+        "whitespace": 0,
+        "leading_zero_values": 0,
+        "missing_markers": 1,
+        "ambiguous_dates": 0,
+        "value_counts": [
+          {
+            "value": "complete",
+            "count": 2,
+            "truncated": false
+          },
+          {
+            "value": "legitimate repeated orders must be reviewed",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "N/A",
+            "count": 1,
+            "truncated": false
+          },
+          {
+            "value": "=1+1",
+            "count": 1,
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "column_count": 4,
+    "duplicate_rows": 1,
+    "formula_risk_cells": 1,
+    "formula_risk_headers": 0,
+    "suspicious_records": [
+      {
+        "record": 1,
+        "column": "shipped",
+        "reason": "ambiguous_day_month"
+      },
+      {
+        "record": 3,
+        "column": "note",
+        "reason": "spreadsheet_formula_prefix"
+      }
+    ],
+    "suspicious_count": 2,
+    "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+  },
+  "shared_columns": [],
+  "mode": "imported_recipe",
+  "proposals": [
+    {
+      "id": "p1",
+      "operation": {
+        "kind": "trim",
+        "column": "status"
+      },
+      "reason": "Imported recipe; re-review against this input and preview.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p2",
+      "operation": {
+        "kind": "replace_exact",
+        "column": "status",
+        "mapping": {
+          "pendng": "pending",
+          "Pending": "pending"
+        }
+      },
+      "reason": "Imported recipe; re-review against this input and preview.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p3",
+      "operation": {
+        "kind": "blank_markers",
+        "column": "note",
+        "markers": [
+          "N/A"
+        ]
+      },
+      "reason": "Imported recipe; re-review against this input and preview.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p4",
+      "operation": {
+        "kind": "date_iso",
+        "column": "shipped",
+        "format": "%d/%m/%Y"
+      },
+      "reason": "Imported recipe; re-review against this input and preview.",
+      "risk": "meaning_change_possible"
+    },
+    {
+      "id": "p5",
+      "operation": {
+        "kind": "drop_exact_duplicates"
+      },
+      "reason": "Imported recipe; re-review against this input and preview.",
+      "risk": "record_deletion"
+    }
+  ],
+  "rejected": [],
+  "errors": [],
+  "model": {
+    "calls": 0,
+    "usage": {}
+  },
+  "digest": "66c98a78d40bc1a609e5545924fcbe151363f1fafea4288e7b14e6038ef4030b"
+}

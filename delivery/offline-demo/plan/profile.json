@@ -1,0 +1,159 @@
+{
+  "rows": 5,
+  "columns": {
+    "order_id": {
+      "missing": 0,
+      "distinct": 4,
+      "type_counts": {
+        "integer_like": 5
+      },
+      "inferred_type": "integer_like",
+      "whitespace": 0,
+      "leading_zero_values": 5,
+      "missing_markers": 0,
+      "ambiguous_dates": 0,
+      "value_counts": [
+        {
+          "value": "004",
+          "count": 2,
+          "truncated": false
+        },
+        {
+          "value": "001",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "002",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "003",
+          "count": 1,
+          "truncated": false
+        }
+      ]
+    },
+    "status": {
+      "missing": 0,
+      "distinct": 4,
+      "type_counts": {
+        "text": 5
+      },
+      "inferred_type": "text",
+      "whitespace": 1,
+      "leading_zero_values": 0,
+      "missing_markers": 0,
+      "ambiguous_dates": 0,
+      "value_counts": [
+        {
+          "value": "done",
+          "count": 2,
+          "truncated": false
+        },
+        {
+          "value": " pending ",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "pendng",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "Pending",
+          "count": 1,
+          "truncated": false
+        }
+      ]
+    },
+    "shipped": {
+      "missing": 0,
+      "distinct": 4,
+      "type_counts": {
+        "text": 5
+      },
+      "inferred_type": "text",
+      "whitespace": 0,
+      "leading_zero_values": 0,
+      "missing_markers": 0,
+      "ambiguous_dates": 1,
+      "value_counts": [
+        {
+          "value": "18/04/2026",
+          "count": 2,
+          "truncated": false
+        },
+        {
+          "value": "03/04/2026",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "17/04/2026",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "not-a-date",
+          "count": 1,
+          "truncated": false
+        }
+      ]
+    },
+    "note": {
+      "missing": 0,
+      "distinct": 4,
+      "type_counts": {
+        "text": 5
+      },
+      "inferred_type": "text",
+      "whitespace": 0,
+      "leading_zero_values": 0,
+      "missing_markers": 1,
+      "ambiguous_dates": 0,
+      "value_counts": [
+        {
+          "value": "complete",
+          "count": 2,
+          "truncated": false
+        },
+        {
+          "value": "legitimate repeated orders must be reviewed",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "N/A",
+          "count": 1,
+          "truncated": false
+        },
+        {
+          "value": "=1+1",
+          "count": 1,
+          "truncated": false
+        }
+      ]
+    }
+  },
+  "column_count": 4,
+  "duplicate_rows": 1,
+  "formula_risk_cells": 1,
+  "formula_risk_headers": 0,
+  "suspicious_records": [
+    {
+      "record": 1,
+      "column": "shipped",
+      "reason": "ambiguous_day_month"
+    },
+    {
+      "record": 3,
+      "column": "note",
+      "reason": "spreadsheet_formula_prefix"
+    }
+  ],
+  "suspicious_count": 2,
+  "notice": "Pattern counts and inferred types are diagnostics, not proof of data correctness."
+}
