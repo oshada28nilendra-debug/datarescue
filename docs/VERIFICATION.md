@@ -1,5 +1,19 @@
 # Verification — DataRescue, 18 October 2026 evening
 
+## Latest result — GitHub publication verified, 19 October
+
+Bounded release status: **verified, PR #1 open for user review/merge**. Implementation commit `f97a20386ed09dd4d96e5c14255d265e06e522dd` is published on `feat/datarescue-first-release`; its tree matches the prepared local release. The following evidence/documentation commit changes no implementation behavior.
+
+- [Ordinary CI and browser](https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342): 36 tests passed, zero skips, per Python 3.11/3.12/3.13, plus lint, formatting, compilation, wheel installation and offline cleaning/replay. All three decoded Python job logs were inspected.
+- The same run's actual Chromium 149.0.7827.55 job passed: five proposals default to reject; accept/reject/modify decisions download correctly; the operation editor enables for modification; unchecked approval is blocked; explicit approval downloads with the matching digest; no browser page errors were reported. The prior browser execution blocker is resolved. This is a synthetic headless check, not user research or an accessibility certification.
+- [Real local-model CI](https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344): checksum-pinned llama.cpp b11718 + official Qwen3-1.7B Q8_0, one actual request (697 prompt / 224 completion tokens). The fictional categorical repair passed scripted review/preview/export and byte-identical replay. Its invalid per-column duplicate-removal suggestion was rejected; unnecessary trims were not selected. No paid model API/key was used.
+
+The actual downloaded model artifact matched the GitHub SHA-256 digest. Its proposals, preview, canonical output and replay were inspected; the output hash is `aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576`. The exported fixed-engine script was replayed locally again and produced that exact hash. Retained artifacts: `delivery/github-live-model/` (the actual exported Python source uses a `.txt` suffix to preserve it as evidence). Machine-readable evidence and browser checks: `delivery/github-verification.json`. A local Gitleaks scan passed before publication.
+
+The user explicitly permitted publication after changing email privacy on 19 October. New API-created commits use the account email in public metadata; the earlier noreply local bundles are separate commits. PR review/merge remains with the user. No broad efficacy, complete-security or production-readiness claim is made. Remote paid-provider behavior and real-world business-rule accuracy remain unevaluated.
+
+## Historical archive-stage records
+
 ## Publication continuation — designated repository
 
 The user designated `oshada28nilendra-debug/datarescue` on 18 October. The repository had only its initial README, with no license or AGENTS instructions. The archive was restored on `feat/datarescue-first-release`, using the verified GitHub noreply email for commits. Hosted CI and PR results are pending first publication. Ordinary CI now includes a real Chromium review/download check, and the separate real local-model workflow also runs for same-repository implementation PRs. Historical statements below that no repository was designated refer to the archive checkpoint.

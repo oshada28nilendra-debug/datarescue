@@ -1,6 +1,6 @@
 {
   "timezone": "Asia/Colombo",
-  "updated_at": "2026-10-18T14:35:37.167579+00:00",
+  "updated_at": "2026-10-19T00:08:18.512Z",
   "entries": [
     {
       "slot": "2026-10-18-morning",
@@ -204,8 +204,8 @@
       "slot": "2026-10-18-afternoon",
       "local_time": "13:00",
       "project": "EvidenceRoom",
-      "status": "publication_prepared_ci_pending",
-      "completed": false,
+      "status": "verified_release_pr_open",
+      "completed": true,
       "target_user": "Researchers, analysts and small organizations preparing decisions from competing documents",
       "problem": "Audit which exact source passages support, oppose or only contextualize a claim before making a decision",
       "differentiator": "Exact normalized spans and source hashes, rejected citation records, source diversity, opposing-evidence queue and digest-bound human review",
@@ -213,47 +213,174 @@
       "repository": "https://github.com/oshada28nilendra-debug/evidenceroom",
       "branch": "feat/evidenceroom-first-release",
       "verification": {
+        "github_ci_run": true,
+        "live_model_verified": true,
         "tests_passed": 39,
         "tests_skipped": 0,
-        "lint": "passed",
-        "format": "passed",
-        "compile": "passed",
-        "wheel": "passed",
-        "installed_cli": "passed",
-        "secret_scan": "no findings (Gitleaks 8.30.1)",
-        "live_model": {
-          "verified": true,
-          "runtime": "llama.cpp b11718",
-          "model": "Qwen3-1.7B Q8_0",
-          "calls": 4,
-          "prompt_tokens": 2322,
-          "completion_tokens": 642,
-          "fixture_gate": "passed; exact quotes plus support/opposition checked manually",
-          "scope": "one authored local source-pack fixture"
-        },
-        "live_planning": {
-          "successful_semantic_planning": false,
-          "observed_outcome": "abstained on normative plan; exit 3 after one actual call"
-        },
-        "public_source_fetch": false,
-        "crossref_discovery": false,
-        "ci_run": false,
-        "blockers": [
-          "Public source DNS/egress unavailable to pinned-address transport",
-          "No explicitly designated repository",
-          "Automatic claim planning quality remains experimental; use reviewed supplied claims"
+        "python_versions": [
+          "3.11",
+          "3.12",
+          "3.13"
         ],
-        "repository_designated": true,
-        "hosted_ci_status": "pending first push/PR"
+        "blockers": [],
+        "browser_execution_verified": false,
+        "public_integrations_verified": true,
+        "scope": "Bounded supported release verified; general efficacy and production readiness are not claimed",
+        "publication_record": "delivery/github-verification.json",
+        "published_verification": {
+          "repository": "https://github.com/oshada28nilendra-debug/evidenceroom",
+          "branch": "feat/evidenceroom-first-release",
+          "pull_request": "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
+          "tested_implementation_commit": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+          "status": "verified_release_pr_open",
+          "bounded_release_complete": true,
+          "merged": false,
+          "runs": [
+            {
+              "id": 39179015444,
+              "name": "live-model",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015444",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179015431,
+              "name": "Public source integrations",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015431",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179015402,
+              "name": "checks",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015402",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "pull_request"
+            },
+            {
+              "id": 39178970550,
+              "name": "checks",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39178970550",
+              "sha": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+              "event": "push"
+            }
+          ],
+          "tests_per_python": 39,
+          "python_versions": [
+            "3.11",
+            "3.12",
+            "3.13"
+          ],
+          "skipped": 0,
+          "decoded_job_logs_inspected": true,
+          "live_model": {
+            "status": "passed",
+            "bundle_digest": "bf1d3b341583679a984a5ff4faf3d5fa4fdba79a2e8b462a51c1104cee05e852",
+            "model": {
+              "calls": 4,
+              "usage": {
+                "prompt_tokens": 2322,
+                "completion_tokens": 642
+              }
+            },
+            "limit": "One authored fixture; human review still required."
+          },
+          "live_artifact": {
+            "id": 12155776535,
+            "sha256": "a1b09672886bbe82a6814ca768379f66f457af4081eaff6667ebf5de2064cf56",
+            "downloaded_and_hash_checked": true,
+            "retained_in": "delivery/github-live-model"
+          },
+          "paid_model_api_calls": 0,
+          "publication_email": "Account email used with explicit user authorization on 19 October; no privacy guarantee for commit metadata",
+          "limitations": [
+            "Authored fixture integration checks only; no general efficacy, complete-security or production-readiness claim",
+            "User review/merge remains separate"
+          ],
+          "public_integrations": {
+            "timestamp": "2026-10-19T00:03:09.876758+00:00",
+            "checks": {
+              "public_source": {
+                "passed": true,
+                "url": "https://www.python.org/",
+                "mime": "text/html",
+                "bytes": 51765,
+                "sha256": "e69f72991bdef8a233817a23f162f2e63e86f869ac623e78788845edc09cc187"
+              },
+              "crossref": {
+                "passed": true,
+                "metadata": {
+                  "provider": "Crossref public metadata",
+                  "query": "retrieval augmented generation",
+                  "results": [
+                    {
+                      "title": "Retrieval‐Augmented Generation",
+                      "url": "https://doi.org/10.1002/9781394374717.ch03",
+                      "doi": "10.1002/9781394374717.ch03",
+                      "publisher": "Wiley",
+                      "type": "other"
+                    },
+                    {
+                      "title": "Graph‐based Retrieval‐augmented Generation",
+                      "url": "https://doi.org/10.1002/9781394374717.ch07",
+                      "doi": "10.1002/9781394374717.ch07",
+                      "publisher": "Wiley",
+                      "type": "other"
+                    },
+                    {
+                      "title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+                      "url": "https://doi.org/10.59350/q2pq3-0fv85",
+                      "doi": "10.59350/q2pq3-0fv85",
+                      "publisher": "Front Matter",
+                      "type": "posted-content"
+                    },
+                    {
+                      "title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+                      "url": "https://doi.org/10.59350/r9dj1-zkx52",
+                      "doi": "10.59350/r9dj1-zkx52",
+                      "publisher": "Front Matter",
+                      "type": "posted-content"
+                    },
+                    {
+                      "title": "Why Retrieval Augmented Generation?",
+                      "url": "https://doi.org/10.5040/bci-0kgd.ch-1",
+                      "doi": "10.5040/bci-0kgd.ch-1",
+                      "publisher": "Packt Publishing",
+                      "type": "other"
+                    }
+                  ],
+                  "notice": "Discovery candidates only; metadata is not evidence for a claim. Review and add primary source URLs to a case."
+                }
+              }
+            },
+            "passed": true,
+            "scope": "Actual public TLS source fetch and bibliographic discovery; no truth or research-quality claim"
+          },
+          "planning": "Experimental automatic planning remains limited; supplied reviewed factual claims are supported."
+        }
       },
       "delivery_links": [
         "EvidenceRoom-2026-10-18-source.zip",
         "README.md",
         "docs/VERIFICATION.md",
-        "delivery/live-model-final/bundle.json"
+        "delivery/live-model-final/bundle.json",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015444",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015431",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39179015402",
+        "https://github.com/oshada28nilendra-debug/evidenceroom/actions/runs/39178970550",
+        "delivery/github-verification.json"
       ],
-      "commit": null,
-      "pull_request": null,
+      "commit": "2ea1d8b4eecab736fab6c951f1a9029cde7c41d4",
+      "pull_request": "https://github.com/oshada28nilendra-debug/evidenceroom/pull/1",
       "suggested_repository": "oshada28nilendra-debug/evidenceroom",
       "suggested_branch": "feat/evidenceroom-first-release",
       "source_package": "EvidenceRoom-2026-10-18-source.zip"
@@ -262,8 +389,8 @@
       "slot": "2026-10-18-evening",
       "local_time": "19:00",
       "project": "DataRescue",
-      "status": "publication_prepared_ci_pending",
-      "completed": false,
+      "status": "verified_release_pr_open",
+      "completed": true,
       "target_user": "Analysts, research assistants and small teams cleaning recurring CSV exports",
       "problem": "Correct messy categorical/date/duplicate data without silent coercion or unreviewed executable AI code",
       "differentiator": "Finite deterministic recipes, exact input-bound preview approval, cell/record evidence and standalone byte-identical replay",
@@ -271,122 +398,122 @@
       "repository": "https://github.com/oshada28nilendra-debug/datarescue",
       "branch": "feat/datarescue-first-release",
       "verification": {
-        "timestamp": "2026-10-18T13:54:18.924170+00:00",
-        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "checks": {
-          "tests": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "unittest",
-              "discover",
-              "-v"
-            ],
-            "log": "delivery/checks/tests.txt"
-          },
-          "lint": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "ruff",
-              "check",
-              "."
-            ],
-            "log": "delivery/checks/lint.txt"
-          },
-          "format": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "ruff",
-              "format",
-              "--check",
-              "."
-            ],
-            "log": "delivery/checks/format.txt"
-          },
-          "compile": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "compileall",
-              "-q",
-              "datarescue",
-              "scripts",
-              "tests"
-            ],
-            "log": "delivery/checks/compile.txt"
-          },
-          "wheel": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "build",
-              "--wheel"
-            ],
-            "log": "delivery/checks/wheel.txt"
-          },
-          "install": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "pip",
-              "install",
-              "--no-deps",
-              "--target",
-              "/tmp/datarescue-install-kl6p2g_5/package",
-              "/workspace/scratch/1e12a4453378/datarescue/dist/datarescue_workbench-0.1.0-py3-none-any.whl"
-            ],
-            "log": "delivery/checks/install.txt"
-          },
-          "installed-profile": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "-m",
-              "datarescue",
-              "profile",
-              "--input",
-              "/workspace/scratch/1e12a4453378/datarescue/fixtures/orders.csv"
-            ],
-            "log": "delivery/checks/installed-profile.txt"
-          },
-          "installed-e2e": {
-            "exit_code": 0,
-            "command": [
-              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
-              "/workspace/scratch/1e12a4453378/datarescue/scripts/offline_demo.py",
-              "--out",
-              "/tmp/datarescue-install-kl6p2g_5/demo"
-            ],
-            "log": "delivery/checks/installed-e2e.txt"
-          }
-        },
-        "all_passed": true,
-        "wheel_sha256": "68d003470c468df06847c6da0f6f49c094b868b89e73f69cbfb20642be82b900",
-        "tests_expected": 36,
-        "live_model_evidence": "delivery/live-model-attempt-2/smoke/verification.json",
-        "remote_ci_run": false,
-        "browser_execution_verified": false,
-        "browser_blocker": "Playwright Chromium download returned invalid/truncated archives",
+        "github_ci_run": true,
+        "live_model_verified": true,
         "tests_passed": 36,
         "tests_skipped": 0,
-        "live_model_verified": true,
-        "live_model_scope": "One authored categorical repair fixture; 1 actual request in successful final run (697 prompt,224 completion tokens), earlier actual run retained; scripted test approval only",
-        "secret_scan": "Gitleaks 8.30.1 dir redacted scan passed; no complete-security claim",
-        "blockers": [
-          "Chromium unavailable and download returned truncated archives; browser flow not verified",
-          "No DataRescue repository designated; no remote branch/commit/PR/CI/deployment"
+        "python_versions": [
+          "3.11",
+          "3.12",
+          "3.13"
         ],
-        "independent_review": "One medium JSON FIFO hang reproduced and regression-fixed; final 36 tests passed",
-        "repository_designated": true,
-        "hosted_ci_status": "pending first push/PR"
+        "blockers": [],
+        "browser_execution_verified": true,
+        "public_integrations_verified": false,
+        "scope": "Bounded supported release verified; general efficacy and production readiness are not claimed",
+        "publication_record": "delivery/github-verification.json",
+        "published_verification": {
+          "repository": "https://github.com/oshada28nilendra-debug/datarescue",
+          "branch": "feat/datarescue-first-release",
+          "pull_request": "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+          "tested_implementation_commit": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+          "status": "verified_release_pr_open",
+          "bounded_release_complete": true,
+          "merged": false,
+          "runs": [
+            {
+              "id": 39179045344,
+              "name": "Manual pinned local model smoke",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179045342,
+              "name": "Tests and package",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "pull_request"
+            },
+            {
+              "id": 39179038181,
+              "name": "Tests and package",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179038181",
+              "sha": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+              "event": "push"
+            }
+          ],
+          "tests_per_python": 36,
+          "python_versions": [
+            "3.11",
+            "3.12",
+            "3.13"
+          ],
+          "skipped": 0,
+          "decoded_job_logs_inspected": true,
+          "live_model": {
+            "result": "passed",
+            "fixture": "authored fictional categorical statuses",
+            "calls": 1,
+            "usage": {
+              "prompt_tokens": 697,
+              "completion_tokens": 224,
+              "total_tokens": 921
+            },
+            "selected_ids": [
+              "p3"
+            ],
+            "rejected_proposals": [
+              {
+                "index": 3,
+                "reason": "Missing or unsupported operation parameters",
+                "proposal": {
+                  "operation": {
+                    "kind": "drop_exact_duplicates",
+                    "column": "id"
+                  },
+                  "reason": "Remove duplicate 'id' entries to ensure uniqueness."
+                }
+              }
+            ],
+            "preview_digest": "74fdba49d6b3e9ea3d522fae441adf1380060b301e4eb43fe68ce0a9dec6bf50",
+            "output_sha256": "aa1f99fb5e48ddac7b921aa327e27dc28503a619b4de82ae0be5484dc780c576",
+            "limitation": "One synthetic case, scripted test approval; not a general accuracy or human-usability claim."
+          },
+          "live_artifact": {
+            "id": 12155017901,
+            "sha256": "b87cf77fa09bfcac64c2d30b75113cb7fab294bd89cedc612172514f18c74af2",
+            "downloaded_and_hash_checked": true,
+            "retained_in": "delivery/github-live-model"
+          },
+          "paid_model_api_calls": 0,
+          "publication_email": "Account email used with explicit user authorization on 19 October; no privacy guarantee for commit metadata",
+          "limitations": [
+            "Authored fixture integration checks only; no general efficacy, complete-security or production-readiness claim",
+            "User review/merge remains separate"
+          ],
+          "browser": {
+            "result": "passed",
+            "browser": "149.0.7827.55",
+            "proposals": 5,
+            "checks": [
+              "default reject",
+              "accept/reject/modify decisions download",
+              "operation editor enablement",
+              "unchecked approval blocked",
+              "explicit digest-bound approval download",
+              "no browser page errors"
+            ],
+            "limitation": "Headless synthetic fixture check, not user research or accessibility certification"
+          },
+          "browser_artifact_id": 12155691794
+        }
       },
       "delivery_links": [
         "DataRescue-2026-10-18-source.zip",
@@ -395,10 +522,15 @@
         "docs/VERIFICATION.md",
         "docs/HANDOFF.md",
         "delivery/verification.json",
-        "delivery/live-model-attempt-2/smoke/verification.json"
+        "delivery/live-model-attempt-2/smoke/verification.json",
+        "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045344",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179045342",
+        "https://github.com/oshada28nilendra-debug/datarescue/actions/runs/39179038181",
+        "delivery/github-verification.json"
       ],
-      "commit": null,
-      "pull_request": null,
+      "commit": "f97a20386ed09dd4d96e5c14255d265e06e522dd",
+      "pull_request": "https://github.com/oshada28nilendra-debug/datarescue/pull/1",
       "suggested_repository": "oshada28nilendra-debug/datarescue",
       "suggested_branch": "feat/datarescue-first-release",
       "source_package": "DataRescue-2026-10-18-source.zip"

@@ -6,7 +6,7 @@ For analysts, research assistants and small teams who need to fix messy exports 
 
 Status: bounded first release. See [verification](docs/VERIFICATION.md) for actual checks, model limitations and publication status. This is not an autonomous data-correctness oracle or a substitute for domain review.
 
-Repository: [oshada28nilendra-debug/datarescue](https://github.com/oshada28nilendra-debug/datarescue). The first release is being published on `feat/datarescue-first-release` for review. The publication check results are recorded in verification.
+Repository: [oshada28nilendra-debug/datarescue](https://github.com/oshada28nilendra-debug/datarescue). The bounded release is published in [PR #1](https://github.com/oshada28nilendra-debug/datarescue/pull/1) on `feat/datarescue-first-release`, awaiting user review/merge. Python 3.11/3.12/3.13 CI, actual Chromium review/download checks and real local-model inference passed; see verification for exact revisions and limitations.
 
 ## What it does
 
@@ -22,9 +22,11 @@ AI never supplies executable cleaning code. An understandable but incorrect sugg
 
 ## Quickstart: no model required
 
-From the extracted source directory:
+Clone the release branch:
 
 ```bash
+git clone --branch feat/datarescue-first-release https://github.com/oshada28nilendra-debug/datarescue.git
+cd datarescue
 python -m venv .venv
 # Linux/macOS; Windows: .venv\Scripts\activate
 source .venv/bin/activate
@@ -145,4 +147,4 @@ python -m compileall -q datarescue scripts tests
 python -m build --wheel
 ```
 
-CI definitions are included but not claimed to have run remotely. [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE) · [Licenses/provenance](docs/LICENSES.md) · [Handoff](docs/HANDOFF.md).
+CI passed on the published implementation, including Chromium and the separate real-model fixture. See `delivery/github-verification.json` for the tested commit and run links. [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE) · [Licenses/provenance](docs/LICENSES.md) · [Handoff](docs/HANDOFF.md).
